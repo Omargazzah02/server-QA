@@ -4,6 +4,7 @@ import request from 'supertest';
 import app from '../server.js';
 import User from '../models/user-model.js'; // adapte le chemin si besoin
 import bcrypt from 'bcrypt';
+import { User } from '../models/user-model.js';
 
 dotenv.config();
 
