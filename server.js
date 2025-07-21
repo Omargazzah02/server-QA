@@ -36,10 +36,11 @@ mongoose.connect(DATABASE_URL)
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.error("MongoDB error:", err));
 
-app.listen(3000, () => {
+const server = app.listen(3000, () => {
   console.log("🚀 Server running on port 3000");
 });
 
 
 
+export { server };
 export default app;

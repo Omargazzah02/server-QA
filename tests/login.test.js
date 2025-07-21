@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import request from 'supertest';
-import app from '../server.js';
 import bcrypt from 'bcrypt';
 import { User } from '../models/user-model.js';
+import app, { server } from '../server.js';
 
 dotenv.config();
 
@@ -20,12 +20,13 @@ describe('POST /login', () => {
     await User.create({
       email: 'user@example.com',
       password: hashedPassword,
-      username : 'exemple'
+      username: 'exemple',
     });
   });
 
   afterAll(async () => {
     await mongoose.connection.close();
+    server.close();
   });
 
   test('✅ Successful login', async () => {
