@@ -16,7 +16,7 @@ app.use(cookieParser());
 
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'http://localhost:3000',
   credentials: true,
 }));
 
@@ -36,8 +36,8 @@ mongoose.connect(DATABASE_URL)
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.error("MongoDB error:", err));
 
-const server = app.listen(3000, () => {
-  console.log("🚀 Server running on port 3000");
+const server = app.listen(8080, () => {
+  console.log("🚀 Server running on port 8080");
 });
 
 
